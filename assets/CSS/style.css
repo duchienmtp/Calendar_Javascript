@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #9b59b6;
+}
+
+.calendar {
+    width: 450px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.calendar header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 30px 10px;
+
+}
+
+header .current-date {
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+header .icons .header-icon {
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50% ;
+}
+
+header .icons .header-icon:hover {
+    background-color: #f2f2f2;
+}
+
+header .icons .header-icon:last-child {
+    margin-right: -10px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.content ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.content .weeks li {
+    font-weight: 600;
+}
+
+.content .days {
+    margin-bottom: 20px;
+}
+
+.content .days li {
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.content ul li {
+    position: relative;
+    width: calc(100% / 7);
+    z-index: 1;
+}
+
+.content .days li::before {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.days li:hover::before {
+    background-color: #f2f2f2;
+}
+
+.days li.inactive {
+    color: #aaa;
+}
+
+.days li.active {
+    color: #fff;
+}
+
+.days li.active::before {
+    background: #9b59b6;
+}
